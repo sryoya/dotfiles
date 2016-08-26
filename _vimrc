@@ -53,6 +53,8 @@ NeoBundle 'KohPoll/vim-less'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'dhruvasagar/vim-table-mode'
+
 
 " 余談: neocompleteは合わなかった。ctrl+pで補完するのが便利
 
@@ -227,6 +229,11 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
+" Markdown Table用の入力補助
+""""""""""""""""""""""""""""""
+let g:table_mode_corner="|"
+""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
 """"""""""""""""""""""""""""""
 if has("autocmd")
@@ -239,10 +246,11 @@ endif
 
 """"""""""""""""""""""""""""""
 " 自動的に閉じ括弧を入力
+" Karabinatorでvim以外にも下記keymap適用。
 """"""""""""""""""""""""""""""
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
+"imap { {}<LEFT>
+"imap [ []<LEFT>
+"imap ( ()<LEFT>
 """"""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""
 " 日本語入力補助
