@@ -45,7 +45,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " ログファイルを色づけしてくれる
 NeoBundle 'vim-scripts/AnsiEsc.vim'
-" 行末の半角スペースを可視化(うまく動かない？)
+" 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
@@ -55,8 +55,8 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
 
-
-" 余談: neocompleteは合わなかった。ctrl+pで補完するのが便利
+" visualモードの範囲拡大
+NeoBundle 'terryma/vim-expand-region'
 
 call neobundle#end()
 
@@ -253,6 +253,7 @@ endif
 "imap ( ()<LEFT>
 """"""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
 " 日本語入力補助
 """"""""""""""""""""""""""""""
 nnoremap あ a
@@ -261,7 +262,27 @@ nnoremap っｄ dd
 nnoremap っｙ yy
 
 """"""""""""""""""""""""""""""
+" MapLeaderを利用したキーバインド
+""""""""""""""""""""""""""""""
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+vmap <Leader>y "+y
+vmap <Leader>p "+p
+nmap <Leader><Leader> V
+""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""
+" visualモードの範囲指定の簡易化
+""""""""""""""""""""""""""""""
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" ClipboadにYankした内容をコピーする
+""""""""""""""""""""""""""""""
+set clipboard=unnamed
+""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""
 " emacs風味
 """"""""""""""""""""""""""""""
