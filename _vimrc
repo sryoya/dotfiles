@@ -58,6 +58,9 @@ NeoBundle 'dhruvasagar/vim-table-mode'
 " visualモードの範囲拡大
 NeoBundle 'terryma/vim-expand-region'
 
+" ColorSchemaを追加
+NeoBundle 'tomasr/molokai'
+
 call neobundle#end()
 
 " Required:
@@ -132,6 +135,7 @@ syntax on
 " カラースキーマの指定
 colorscheme molokai
 set t_Co=256
+highlight Normal ctermbg=none
 """"""""""""""""""""""""""""""
 
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
