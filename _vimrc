@@ -61,6 +61,18 @@ NeoBundle 'terryma/vim-expand-region'
 " ColorSchemaを追加
 NeoBundle 'tomasr/molokai'
 
+" 簡易script実行環境
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/vimproc.vim', {
+      \ 'build' : {
+      \     'windows' : 'tools\\update-dll-mingw',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make',
+      \     'linux' : 'make',
+      \     'unix' : 'gmake',
+      \    },
+      \ }
+
 call neobundle#end()
 
 " Required:
@@ -238,6 +250,21 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let g:table_mode_corner="|"
 """"""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""
+" 簡易script実行環境
+""""""""""""""""""""""""""""""
+let g:quickrun_config = get(g:, 'quickrun_config', {})
+let g:quickrun_config._ = {
+      \ 'runner'    : 'vimproc',
+      \ 'runner/vimproc/updatetime' : 60,
+      \ 'outputter' : 'error',
+      \ 'outputter/error/success' : 'buffer',
+      \ 'outputter/error/error'   : 'quickfix',
+      \ 'outputter/buffer/split'  : ':rightbelow 8sp',
+      \ 'outputter/buffer/close_on_empty' : 1,
+      \ }
+
+""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
 """"""""""""""""""""""""""""""
 if has("autocmd")
@@ -269,7 +296,8 @@ nnoremap っｙ yy
 " MapLeaderを利用したキーバインド
 """"""""""""""""""""""""""""""
 let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>ww :w!<CR>
+nnoremap <Leader>wq :wq!<CR>
 vmap <Leader>y "+y
 vmap <Leader>p "+p
 nmap <Leader><Leader> V
