@@ -313,7 +313,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 """"""""""""""""""""""""""""""
 " ClipboadにYankした内容をコピーする
 """"""""""""""""""""""""""""""
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
 """"""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""
 " emacs風味
