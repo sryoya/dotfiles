@@ -289,9 +289,24 @@ endif
 """"""""""""""""""""""""""""""
 nnoremap あ a
 nnoremap い i
-nnoremap っｄ dd
-nnoremap っｙ yy
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
+" 表示単位で上下
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+" showbreaks
+" set showbreak=↪
 
+nnoremap し” ci"
+nnoremap し’ ci'
+" jjでエスケープ
+inoremap <silent> jj <ESC>
+" 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
+inoremap <silent> っｊ <ESC>
 """"""""""""""""""""""""""""""
 " MapLeaderを利用したキーバインド
 """"""""""""""""""""""""""""""
@@ -327,6 +342,8 @@ set fileformats=unix,dos,mac
 " emacs風味
 """"""""""""""""""""""""""""""
 imap <C-d> <ESC><RIGHT>xi
+imap <C-h> <ESC>xa
 """"""""""""""""""""""""""""""
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
 filetype on
+
