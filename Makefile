@@ -5,6 +5,9 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 all: install
 
+list:
+	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
+
 deploy:
 	@echo 'Copyright (c) 2013-2015 BABAROT All Rights Reserved.'
 	@echo '==> Start to deploy dotfiles to home directory.'

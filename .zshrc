@@ -10,13 +10,13 @@ umask 022
 limit coredumpsize 0
 bindkey -d
 
-# It is necessary for the setting of DOTPATH
-#if [[ -f ~/.path ]]; then
-#  source ~/.path
-#else
-#  export DOTPATH="${0:A:t}"
-#fi
-export DOTPATH='/Users/yoheia/dotfiles'
+#  It is necessary for the setting of DOTPATH
+if [[ -f ~/.path ]]; then
+  source ~/.path
+else
+  export DOTPATH="${0:A:t}"
+fi
+# export DOTPATH='/Users/yoheia/dotfiles'
 
 # DOTPATH environment variable specifies the location of dotfiles.
 # On Unix, the value is a colon-separated string. On Windows,
@@ -43,6 +43,9 @@ fi
 autoload -U compinit
 compinit
 
+
+# Setting importing from bash_profile.
+# following setting will be deleted after making separated file.
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
@@ -50,6 +53,16 @@ alias ls="ls -GF"
 alias gls="gls --color"
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+
+month=`date "+%b"`
+alias write="cd ~/Dropbox/Projects/oki_projects/Memo/ && vim Memo_for_${month}.mdown"
+alias gwp="cd ~/Dropbox/Projects/oki_projects/"
+cdls ()
+{
+  \cd "$@" && ls
+}
+alias cd="cdls"
+
 
 
 export ENHANCD_FILTER="fzy:$ENHANCD_FILTER"
@@ -88,29 +101,4 @@ printf "\n$fg_bold[cyan]This is ZSH $fg_bold[red]${ZSH_VERSION}"
 printf "$fg_bold[cyan] - DISPLAY on $fg_bold[red]$DISPLAY$reset_color\n\n"
 
 # vim:fdm=marker fdc=3 ft=zsh ts=4 sw=4 sts=4:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

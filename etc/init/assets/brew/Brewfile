@@ -1,8 +1,23 @@
 tap 'homebrew/bundle'
 
+brew 'openssl'
+brew 'peco'
+brew 'git'
+brew 'peco'
 brew 'tmux'
 brew 'tree'
 brew 'vim', args: ['with-lua', 'with-luajit']
 brew 'wget'
 brew 'zsh', args: ['disable-etcdir']
 brew 'zsh-completions'
+
+tap 'caskroom/cask'
+brew 'brew-cask'
+cask '1password'
+cask 'appcleaner'
+cask 'bettertouchtool'
+cask 'kobito'
+cask 'macvim'
+cask 'skitch'
+cask 'vagrant'
+cask 'virtualbox'
