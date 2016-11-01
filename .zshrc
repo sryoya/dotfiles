@@ -63,7 +63,11 @@ cdls ()
 }
 alias cd="cdls"
 
-
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+  export PATH=${PYENV_ROOT}/bin:$PATH
+  eval "$(pyenv init -)"
+fi
 
 export ENHANCD_FILTER="fzy:$ENHANCD_FILTER"
 

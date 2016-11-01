@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "LA(#[fg=white]$(uptime | awk '{print $(NF-2)}')#[default]) "
+
