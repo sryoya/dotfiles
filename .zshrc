@@ -40,10 +40,6 @@ if [[ -f $VITAL_PATH ]]; then
 fi
 
 
-autoload -U compinit
-compinit
-
-
 # Setting importing from bash_profile.
 # following setting will be deleted after making separated file.
 export LSCOLORS=exfxcxdxbxegedabagacad
@@ -62,6 +58,8 @@ cdls ()
   \cd "$@" && ls
 }
 alias cd="cdls"
+alias vim="reattach-to-user-namespace vim"
+alias vi="reattach-to-user-namespace vim"
 
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then

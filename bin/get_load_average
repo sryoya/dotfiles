@@ -1,4 +1,59 @@
 #!/bin/bash
 
-echo "LA(#[fg=white]$(uptime | awk '{print $(NF-2)}')#[default]) "
 
+# Load vital library that is most important and
+# constructed with many minimal functions
+# For more information, see etc/README.md
+. "$DOTPATH"/etc/lib/vital.sh
+
+
+# If the load agerage  is more than the LOAD_AVERAGE_DANGER,
+# output color will be red
+LOAD_AVERAGE_DANGER=4.00
+
+get_load_average(){
+  current_load_average="$(uptime | awk '{print $(NF-2)}')"
+  echo $current_load_average
+}
+
+
+# echo "LA(#[fg=white]$(uptime | awk '{print $(NF-2)}')#[default]) "
+
+# load_average_color_tmux colorizes the load average for tmux
+load_average_color_tmux() {
+  local current_load_average
+  current_load_average="${1:-$(get_load_average)}"
+
+  # LOAD_AVERAGE_DANGER > load_average: if true, return 1
+  result=`echo "$LOAD_AVERAGE_DANGER > $current_load_average" | bc`
+ if [ $result -eq 1 ]; then
+   echo -e "#[fg=blue]${current_load_average}#[default]"
+ else
+   echo -e "#[fg=red]${current_load_average}#[default]"
+ fi
+}
+
+if ! is_osx; then
+  echo "OS X only" 1>&2
+fi
+
+# check arguments
+for i in "$@"
+do
+  case "$i" in
+    "-h" |"--help")
+      echo
+      echo
+      exit
+      ;;
+    "--tmux")
+      load_average_color_tmux "$(get_load_average)"
+      exit $?
+      ;;
+    -*|--*)
+      echo "$i: unknow option" 1>&2
+      exit 1
+  esac
+done
+
+get_load_average

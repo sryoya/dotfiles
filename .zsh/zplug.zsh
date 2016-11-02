@@ -5,7 +5,6 @@ has_plugin() {
   zplug check "${1:?too few arguments}"
   return $status
 }
-
 # Local loading
 zplug "zplug/zplug"
 
