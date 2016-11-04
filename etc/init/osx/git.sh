@@ -1,0 +1,1 @@
+/Users/yoheia/dotfiles/etc/init/common/git.sh

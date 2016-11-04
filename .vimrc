@@ -44,6 +44,8 @@ NeoBundle 'tomtom/tcomment_vim'
 " シングルクオートとダブルクオートの入れ替え等
 NeoBundle 'tpope/vim-surround'
 
+" vimからアクセスするカレンダー生活
+NeoBundle 'itchyny/calendar.vim'
 " インデントに色を付けて見やすくする
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " ログファイルを色づけしてくれる
@@ -63,6 +65,9 @@ NeoBundle 'terryma/vim-expand-region'
 
 " ColorSchemaを追加
 NeoBundle 'tomasr/molokai'
+
+" HTML入力補完
+NeoBundle 'mattn/emmet-vim'
 
 " 簡易script実行環境
 NeoBundle 'thinca/vim-quickrun'
@@ -248,6 +253,16 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
+" Emmetのキーマップ作成
+""""""""""""""""""""""""""""""
+let g:user_emmet_leader_key = '<c-y>'
+let g:user_emmet_settings = {
+\   'lang' : 'ja'
+\ }
+"""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
 " Markdown Table用の入力補助
 """"""""""""""""""""""""""""""
 let g:table_mode_corner="|"
@@ -327,6 +342,15 @@ nmap <Leader><Leader> V
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 """"""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" Calenderを利用できるように
+""""""""""""""""""""""""""""""
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+
 
 """"""""""""""""""""""""""""""
 " ClipboadにYankした内容をコピーする

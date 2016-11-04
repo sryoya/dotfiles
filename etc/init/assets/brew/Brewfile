@@ -13,13 +13,3 @@ brew 'wget'
 brew 'zsh', args: ['disable-etcdir']
 brew 'zsh-completions'
 
-tap 'caskroom/cask'
-brew 'brew-cask'
-cask '1password'
-cask 'appcleaner'
-cask 'bettertouchtool'
-cask 'kobito'
-cask 'macvim'
-cask 'skitch'
-cask 'vagrant'
-cask 'virtualbox'

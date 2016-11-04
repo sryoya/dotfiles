@@ -45,21 +45,7 @@ fi
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
-alias ls="ls -GF"
-alias gls="gls --color"
-
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-
-month=`date "+%b"`
-alias write="cd ~/Dropbox/Projects/oki_projects/Memo/ && vim Memo_for_${month}.mdown"
-alias gwp="cd ~/Dropbox/Projects/oki_projects/"
-cdls ()
-{
-  \cd "$@" && ls
-}
-alias cd="cdls"
-alias vim="reattach-to-user-namespace vim"
-alias vi="reattach-to-user-namespace vim"
 
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
@@ -104,3 +90,6 @@ printf "$fg_bold[cyan] - DISPLAY on $fg_bold[red]$DISPLAY$reset_color\n\n"
 
 # vim:fdm=marker fdc=3 ft=zsh ts=4 sw=4 sts=4:
 
+
+export NVM_DIR="/Users/yoheia/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
