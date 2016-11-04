@@ -1,1 +1,1 @@
-/Users/yoheia/dotfiles/etc/init/common/pygments.sh
+../common/pygments.sh

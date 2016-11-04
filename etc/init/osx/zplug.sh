@@ -1,1 +1,1 @@
-/Users/yoheia/dotfiles/etc/init/common/zplug.sh
+../common/zplug.sh

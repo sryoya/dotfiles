@@ -1,1 +1,1 @@
-/Users/yoheia/dotfiles/etc/init/common/zsh.sh
+../common/zsh.sh
