@@ -1,6 +1,7 @@
 tap 'homebrew/bundle'
 
 brew 'openssl'
+brew 'coreutils'
 brew 'peco'
 brew 'git'
 brew 'peco'

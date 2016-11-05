@@ -2,8 +2,8 @@ month=`date "+%b"`
 alias write="cd ~/Dropbox/Projects/oki_projects/Memo/ && vim Memo_for_${month}.mdown"
 alias gwp="cd ~/Dropbox/Projects/oki_projects/"
 
-alias ls="ls -GF"
-alias gls="gls --color"
+# alias ls="ls -GF"
+# alias gls="gls --color"
 
 alias cd="cdls"
 alias vim="reattach-to-user-namespace vim"
