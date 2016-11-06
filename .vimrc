@@ -26,14 +26,19 @@ call neobundle#begin(expand($VIMBUNDLE))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " ファイルオープンを便利に
-NeoBundle 'Shougo/unite.vim'
+" NeoBundle 'Shougo/unite.vim'
+" ファイルオープン用
+NeoBundle 'kien/ctrlp.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
-
+" 入力補完
+NeoBundle 'Shougo/neocomplete.vim'
+" pythonの入力補完
+NeoBundle 'davidhalter/jedi-vim'
 " Rails向けのコマンドを提供する
 NeoBundle 'tpope/vim-rails'
 " Ruby向けにendを自動挿入してくれる
@@ -68,7 +73,6 @@ NeoBundle 'tomasr/molokai'
 
 " HTML入力補完
 NeoBundle 'mattn/emmet-vim'
-
 " 簡易script実行環境
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc.vim', {
@@ -169,25 +173,76 @@ autocmd QuickFixCmdPost *grep* cwindow
 " Unit.vimの設定
 """"""""""""""""""""""""""""""
 " 入力モードで開始する
-let g:unite_enable_start_insert=1
-" バッファ一覧
-noremap <C-P> :Unite buffer<CR>
-" ファイル一覧
-noremap <C-N> :Unite -buffer-name=file file<CR>
-" 最近使ったファイルの一覧
-"noremap <C-Z> :Unite file_mru<CR>
-" sourcesを「今開いているファイルのディレクトリ」とする
-noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-" ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" ESCキーを2回押すと終了する
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+" let g:unite_enable_start_insert=1
+" let g:unite_enable_ignore_case = 1  
+" let g:unite_enable_smart_case = 1
+" " バッファ一覧
+" noremap <C-P> :Unite buffer<CR>
+" " ファイル一覧
+" noremap <C-N> :Unite -buffer-name=file file<CR>
+" " 最近使ったファイルの一覧
+" "noremap <C-Z> :Unite file_mru<CR>
+" " sourcesを「今開いているファイルのディレクトリ」とする
+" noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+" " ウィンドウを分割して開く
+" au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" " ウィンドウを縦に分割して開く
+" au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+" au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+" " ESCキーを2回押すと終了する
+" au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+" au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+""""""""""""""""""""""""""""""
+" Neocompleteの設定
+""""""""""""""""""""""""""""""
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  " return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+" Close popup by <Space>.
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+""""""""""""""""""""""""""""""
+" NeocompleteとJedi(Python入力補完)の連携
+""""""""""""""""""""""""""""""
+autocmd FileType python setlocal omnifunc=jedi#completions
+
+let g:jedi#auto_vim_configuration = 0
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+        let g:neocomplete#force_omni_input_patterns = {}
+endif
+
+let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+""""""""""""""""""""""""""""""
 " Markdown拡張子適用
 au BufRead,BufNewFile *.md set filetype=markdown
 """"""""""""""""""""""""""""""

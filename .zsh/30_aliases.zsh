@@ -11,7 +11,7 @@ alias vi="reattach-to-user-namespace vim"
 
 cdls ()
 {
-  \cd "$@" && ls
+  \cd "$@" && gls --color=auto -F
 }
 
 # Check whether the vital file is loaded
@@ -459,3 +459,16 @@ git_modified_files() {
 }
 #alias -g GG='$(git_modified_files)'
 alias ls='gls --color=auto -F'
+
+# open current directory in Finder
+alias f='open .'
+
+# cd to the path of the front Finder window
+cdf() {
+  target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+  if [ "$target" != "" ]; then
+    cd "$target"; pwd
+  else
+    echo 'No Finder window found' >&2
+  fi
+}
