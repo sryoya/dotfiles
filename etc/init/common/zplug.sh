@@ -16,7 +16,7 @@ if [[ ! -f ~/.zplug/init.zsh ]]; then
     fi
 fi
 
-if [[ -f ~/.zplug/init.zsh ]]; then
+if [[ ! -f ~/.zplug/init.zsh ]]; then
     echo "zplug: not found" >&2
     exit 1
 fi
@@ -26,6 +26,7 @@ source ~/.zplug/init.zsh
 if [[ -f $DOTPATH/.zsh/zplug.zsh ]]; then
     export ZPLUG_LOADFILE="$DOTPATH/.zsh/zplug.zsh"
 fi
+echo "test"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "

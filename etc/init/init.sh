@@ -34,6 +34,7 @@ do
     log_info "$(e_arrow "$(basename "$i")")"
     if [ "${DEBUG:-}" != 1 ]; then
       bash "$i"
+      echo $i
     fi
   else
     continue
