@@ -1,14 +1,16 @@
 AnsiEsc.vim
 calendar.vim
+ctrlp.vim
 emmet-vim
+jedi-vim
 molokai
 neobundle.vim
+neocomplete.vim
 neomru.vim
 nerdtree
 open-browser.vim
 previm
 tcomment_vim
-unite.vim
 vim-endwise
 vim-expand-region
 vim-fugitive
