@@ -1,0 +1,24 @@
+#!/bin/bash
+
+IMAGE_PATH="./images/"
+
+if [[ ! $+commands[pngpaste] ]]; then
+  echo"pngpaste: commandnot found" >&2
+  exit 1
+fi
+
+if [[ ! -e "$IMAGE_PATH" ]]; then
+  echo "No image folder"
+  exit 1
+fi
+
+IMAGE_NAME=`date "+%Y%m%d_%H%M%S".png`
+
+if [[ -e "$IMAGE_PATH$IMAGE_NAME" ]]; then
+  echo "File already existed"
+  exit 1
+fi
+
+pngpaste $IMAGE_PATH$IMAGE_NAME
+MARKDOWN_IMAGE_SYNTAX="![]($IMAGE_PATH$IMAGE_NAME)"
+echo $MARKDOWN_IMAGE_SYNTAX
