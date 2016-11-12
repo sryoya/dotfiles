@@ -35,6 +35,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
+" neocompleteとmarkdown-vimを共存させるため
+NeoBundle 'konfekt/fastfold'
 " 入力補完
 NeoBundle 'Shougo/neocomplete.vim'
 " pythonの入力補完
@@ -60,6 +62,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
 " Markdown便利化
+NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
@@ -174,7 +177,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 """"""""""""""""""""""""""""""
 " 入力モードで開始する
 " let g:unite_enable_start_insert=1
-" let g:unite_enable_ignore_case = 1  
+" let g:unite_enable_ignore_case = 1
 " let g:unite_enable_smart_case = 1
 " " バッファ一覧
 " noremap <C-P> :Unite buffer<CR>
@@ -244,9 +247,16 @@ endif
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 """"""""""""""""""""""""""""""
 " Markdown拡張子適用
+""""""""""""""""""""""""""""""
 au BufRead,BufNewFile *.md set filetype=markdown
 """"""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""
+" Markdown画像挿入自動化
+""""""""""""""""""""""""""""""
+imap <F2> <C-c>:r! image_paste_for_markdown %:h<CR>lli
+
+""""""""""""""""""""""""""""""
 " http://inari.hatenablog.com/entry/2014/05/05/231307
 """"""""""""""""""""""""""""""
 " 全角スペースの表示
@@ -426,6 +436,8 @@ set fileformats=unix,dos,mac
 imap <C-d> <ESC><RIGHT>xi
 imap <C-h> <ESC>xa
 """"""""""""""""""""""""""""""
+
+
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
 filetype on
 
