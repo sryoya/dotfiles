@@ -1,6 +1,11 @@
 #!/bin/bash
 
-IMAGE_PATH="./images/"
+if [ -n "$1" ]
+then
+  IMAGE_PATH="$1/images/"
+else
+  IMAGE_PATH="./images/"
+fi
 
 if [[ ! $+commands[pngpaste] ]]; then
   echo"pngpaste: commandnot found" >&2
@@ -19,6 +24,12 @@ if [[ -e "$IMAGE_PATH$IMAGE_NAME" ]]; then
   exit 1
 fi
 
+RELATIVE_IMAGE_PATH='./images/'
+
 pngpaste $IMAGE_PATH$IMAGE_NAME
-MARKDOWN_IMAGE_SYNTAX="![]($IMAGE_PATH$IMAGE_NAME)"
-echo $MARKDOWN_IMAGE_SYNTAX
+RESULT=$?
+
+if [ $RESULT = 0 ]; then
+  MARKDOWN_IMAGE_SYNTAX="![]($RELATIVE_IMAGE_PATH$IMAGE_NAME)"
+  echo $MARKDOWN_IMAGE_SYNTAX
+fi

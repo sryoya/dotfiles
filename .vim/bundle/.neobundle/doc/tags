@@ -184,6 +184,7 @@
 :TableModeToggle	table-mode.txt	/*:TableModeToggle*
 :TableSort	table-mode.txt	/*:TableSort*
 :Tableize	table-mode.txt	/*:Tableize*
+:Tabularize	Tabular.txt	/*:Tabularize*
 :Toc	vim-markdown.txt	/*:Toc*
 :Toch	vim-markdown.txt	/*:Toch*
 :Toct	vim-markdown.txt	/*:Toct*
@@ -317,6 +318,11 @@ ClearCtrlPCache	ctrlp.txt	/*ClearCtrlPCache*
 ControlP	ctrlp.txt	/*ControlP*
 CtrlP	ctrlp.txt	/*CtrlP*
 Emmet	emmet.txt	/*Emmet*
+FastFold	FastFold.txt	/*FastFold*
+FastFold-commands	FastFold.txt	/*FastFold-commands*
+FastFold-config	FastFold.txt	/*FastFold-config*
+FastFold-intro	FastFold.txt	/*FastFold-intro*
+FastFoldUpdate!	FastFold.txt	/*FastFoldUpdate!*
 FixWhitespace	trailing-whitespace.txt	/*FixWhitespace*
 FixWhitespace-variables	trailing-whitespace.txt	/*FixWhitespace-variables*
 NERDTree	NERD_tree.txt	/*NERDTree*
@@ -382,6 +388,7 @@ NERD_tree.txt	NERD_tree.txt	/*NERD_tree.txt*
 OpenBrowser()	openbrowser.txt	/*OpenBrowser()*
 OpenBrowserSearch()	openbrowser.txt	/*OpenBrowserSearch()*
 ResetCtrlP	ctrlp.txt	/*ResetCtrlP*
+Tabular.txt	Tabular.txt	/*Tabular.txt*
 b:neocomplete_sources	neocomplete.txt	/*b:neocomplete_sources*
 b:quickrun_config	quickrun.txt	/*b:quickrun_config*
 b:tcomment_def_{NAME}	tcomment.txt	/*b:tcomment_def_{NAME}*
@@ -539,6 +546,10 @@ expand-region-mappings	expand_region.txt	/*expand-region-mappings*
 expand-region-usage	expand_region.txt	/*expand-region-usage*
 expand_region_text_objects	expand_region.txt	/*expand_region_text_objects*
 expand_region_use_select_mode	expand_region.txt	/*expand_region_use_select_mode*
+fastfold	FastFold.txt	/*fastfold*
+fastfold-commands	FastFold.txt	/*fastfold-commands*
+fastfold-config	FastFold.txt	/*fastfold-config*
+fastfold-intro	FastFold.txt	/*fastfold-intro*
 fugitive	fugitive.txt	/*fugitive*
 fugitive#head(...)	fugitive.txt	/*fugitive#head(...)*
 fugitive#statusline()	fugitive.txt	/*fugitive#statusline()*
@@ -1407,6 +1418,12 @@ table-mode-separator	table-mode.txt	/*table-mode-separator*
 table-mode-sort-map	table-mode.txt	/*table-mode-sort-map*
 table-mode-toggle-map	table-mode.txt	/*table-mode-toggle-map*
 table-mode.txt	table-mode.txt	/*table-mode.txt*
+tabular	Tabular.txt	/*tabular*
+tabular-intro	Tabular.txt	/*tabular-intro*
+tabular-scripting	Tabular.txt	/*tabular-scripting*
+tabular-toc	Tabular.txt	/*tabular-toc*
+tabular-walkthrough	Tabular.txt	/*tabular-walkthrough*
+tabular.vim	Tabular.txt	/*tabular.vim*
 tcomment#Comment()	tcomment.txt	/*tcomment#Comment()*
 tcomment#CommentAs()	tcomment.txt	/*tcomment#CommentAs()*
 tcomment#DefineType()	tcomment.txt	/*tcomment#DefineType()*
