@@ -463,7 +463,7 @@ git_modified_files() {
 alias ls='gls --color=auto -F'
 
 # open current directory in Finder
-alias f='open .'
+alias fo='open .'
 
 # cd to the path of the front Finder window
 cdf() {
