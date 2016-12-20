@@ -26,7 +26,6 @@ source ~/.zplug/init.zsh
 if [[ -f $DOTPATH/.zsh/zplug.zsh ]]; then
     export ZPLUG_LOADFILE="$DOTPATH/.zsh/zplug.zsh"
 fi
-echo "test"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
