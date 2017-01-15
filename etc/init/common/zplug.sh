@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [[ ! -f ~/.zplug/init.zsh ]]; then
-    if (( ! $+commands[git] )); then
+#    if (( ! $+commands[git] )); then
+    if ! type git > /dev/null 2>&1; then
         echo "git: command not found" >&2
         exit 1
     fi
