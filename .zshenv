@@ -1,17 +1,21 @@
+typeset -gx -U path
+path=( \
+  /usr/local/bin(N-/) \
+  ~/bin(N-/) \
+  ~/.zplug/bin(N-/) \
+  ~/.tmux/bin(N-/) \
+  "$path[@]" \
+  )
 
-if [[ -z $DOTPATH ]]; then
-  _get_dotpath() {
-    local d
-    d="${0:A:h}"
-    if [[ $d =~ dotfiles$ ]]; then
-      echo "$d"
-    else
-      return 1
-    fi
-  }
-  export DOTPATH="$(_get_dotpath)"
-  unfunction _get_dotpath
-fi
+# NOTE: set fpath before compinit
+typeset -gx -U fpath
+fpath=( \
+  ~/.zsh/Completion(N-/) \
+  ~/.zsh/functions(N-/) \
+  ~/.zsh/plugins/zsh-completions(N-/) \
+  /usr/local/share/zsh/site-functions(N-/) \
+  $fpath \
+  )
 
 # autoload
 autoload -Uz run-help
@@ -32,6 +36,12 @@ export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 export GIT_EDITOR="${EDITOR}"
 
+# Pager
+export PAGER=less
+# Less status line
+export LESS='-R -f -X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
+export LESSCHARSET='utf-8'
+
 # LESS man page colors (makes Man pages more readable).
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
@@ -50,6 +60,23 @@ setopt no_global_rcs
 export PATH=~/bin:"$PATH"
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 
+# Settings for golang
+export GOPATH="$HOME"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
+
+
+# declare the environment variables
+export CORRECT_IGNORE='_*'
+export CORRECT_IGNORE_FILE='.*'
+
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+export WORDCHARS='*?.[]~&;!#$%^(){}<>'
+
+# fzf - command-line fuzzy finder (https://github.com/junegunn/fzf)
+export FZF_DEFAULT_OPTS="--extended --ansi --multi"
+
+
 # Cask
 #export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
@@ -67,3 +94,11 @@ if [[ $UID == 0 ]]; then
   unset HISTFILE
   export SAVEHIST=0
 fi
+
+# available $INTERACTIVE_FILTER
+export INTERACTIVE_FILTER="fzf:peco:percol:gof:pick"
+
+# keybind ^X^X
+export ONELINER_FILE="$DOTPATH/doc/misc/commands.txt"
+
+[[ -f ~/.secret ]] && source ~/.secret

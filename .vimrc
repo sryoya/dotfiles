@@ -67,6 +67,7 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'jkramer/vim-checkbox'
 
 " visualモードの範囲拡大
 NeoBundle 'terryma/vim-expand-region'
