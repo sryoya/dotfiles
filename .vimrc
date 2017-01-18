@@ -74,6 +74,8 @@ NeoBundle 'terryma/vim-expand-region'
 
 " ColorSchemaを追加
 NeoBundle 'tomasr/molokai'
+" go syntax
+NeoBundle 'fatih/vim-go'
 
 " HTML入力補完
 NeoBundle 'mattn/emmet-vim'
