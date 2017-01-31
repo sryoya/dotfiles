@@ -99,3 +99,6 @@ export NVM_DIR="/Users/yoheia/.nvm"
 #PROMPT='[%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f]# '
 PROMPT='[%F{yellow}%B%n%b%f]%% '
 RPROMPT='at [%F{green}%d%f]'
+
+export PATH="$PATH:$HOME/.rbenv/bin"
+eval "$(rbenv init - zsh)"
