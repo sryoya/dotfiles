@@ -409,8 +409,9 @@ vmap <Leader>y "+y
 vmap <Leader>p "+p
 nmap <Leader><Leader> V
 noremap <Leader>l  $
-nnoremap <Leader>/  *
+noremap <Leader>/  *
 noremap <Leader>h  ^
+noremap <Leader>s :%s/
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
