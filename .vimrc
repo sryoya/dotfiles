@@ -408,6 +408,9 @@ nnoremap <Leader>wq :wq!<CR>
 vmap <Leader>y "+y
 vmap <Leader>p "+p
 nmap <Leader><Leader> V
+noremap <Leader>l  $
+nnoremap <Leader>/  *
+noremap <Leader>h  ^
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
