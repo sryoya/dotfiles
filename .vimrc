@@ -83,6 +83,9 @@ NeoBundle 'mattn/emmet-vim'
 " Syntax for force.com
 NeoBundle 'ejholmes/vim-forcedotcom'
 
+" Deal with 'surroundings'
+NeoBundle 'tpope/vim-surround'
+
 " 簡易script実行環境
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc.vim', {
