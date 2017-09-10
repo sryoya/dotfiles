@@ -1,7 +1,7 @@
 month=`date "+%b"`
 
 alias write="cd ~/Dropbox/Projects/oki_projects/Memo/ && vim Memo_for_${month}.mdown"
-alias memo="vi ~/Dropbox/Projects/memo/memo.mdown"
+alias memomemo="vi ~/Dropbox/Projects/memo/memo.mdown"
 alias go_memo="vi ~/Dropbox/Projects/memo/go_memo.mdown"
 alias gwp="cd ~/Dropbox/Projects/oki_projects/"
 alias google="vi ~/Dropbox/Projects/google-interview-university/README.md"
