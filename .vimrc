@@ -79,6 +79,10 @@ NeoBundle 'fatih/vim-go'
 
 " HTML入力補完
 NeoBundle 'mattn/emmet-vim'
+
+" Syntax for force.com
+NeoBundle 'ejholmes/vim-forcedotcom'
+
 " 簡易script実行環境
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc.vim', {
@@ -160,6 +164,9 @@ set shiftwidth=2
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
+"" 縦横にハイライト
+"set cursorline
+"set cursorcolumn
 " 構文毎に文字色を変化させる
 syntax on
 " カラースキーマの指定
@@ -401,6 +408,10 @@ nnoremap <Leader>wq :wq!<CR>
 vmap <Leader>y "+y
 vmap <Leader>p "+p
 nmap <Leader><Leader> V
+noremap <Leader>l  $
+noremap <Leader>/  *
+noremap <Leader>h  ^
+noremap <Leader>s :%s/
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""

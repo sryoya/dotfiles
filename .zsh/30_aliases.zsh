@@ -14,7 +14,8 @@ alias vim="reattach-to-user-namespace vim"
 alias vi="reattach-to-user-namespace vim"
 
 # easy way to browse projects listed under ghq
-alias g='cd $(ghq root)/$(ghq list | peco)'
+#alias g='cd $(ghq root)/$(ghq list | peco)'
+alias g='cd $(find ~/src/github.com -follow  -maxdepth 2 -mindepth 2 -type d|peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
 cdls ()
