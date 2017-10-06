@@ -14,6 +14,18 @@ if is_screen_or_tmux_running; then
       if [[ $(( RANDOM % 5 )) == 1 ]]; then
         cowsay -f ghostbusters "G,g,g,ghostbusters!!!"
         echo ""
+      elif [[ $(( RANDOM % 5 )) == 2 ]]; then
+        cowsay -f cheese "cheese cheese cheese!!!"
+        echo ""
+      elif [[ $(( RANDOM % 5 )) == 3 ]]; then
+        cowsay -f gnu "slow slow life"
+        echo ""
+      elif [[ $(( RANDOM % 5 )) == 4 ]]; then
+        cowsay -f kiss "yohei and moe"
+        echo ""
+      elif [[ $(( RANDOM % 5 )) == 0 ]]; then
+        cowsay -f milk "No Milk No Life!!!!"
+        echo ""
       fi
     else
       echo ' _____ __  __ _   ___  __ '
