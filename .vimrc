@@ -4,8 +4,7 @@ set nocompatible
 filetype off
 
 """"""""""""""""""""""""""""""
-" プラグインのセットアップ
-""""""""""""""""""""""""""""""
+" プラグインのセットアップ """"""""""""""""""""""""""""""
 
 if has('vim_starting')
   set nocompatible               " Be iMproved
@@ -50,6 +49,8 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tomtom/tcomment_vim'
 " シングルクオートとダブルクオートの入れ替え等
 NeoBundle 'tpope/vim-surround'
+" csvの編集ができるようにしてくれる
+NeoBundle 'chrisbra/csv.vim'
 
 " vimからアクセスするカレンダー生活
 NeoBundle 'itchyny/calendar.vim'
@@ -245,6 +246,7 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 " Close popup by <Space>.
 inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
 """"""""""""""""""""""""""""""
 " NeocompleteとJedi(Python入力補完)の連携
 """"""""""""""""""""""""""""""
@@ -370,6 +372,7 @@ if has("autocmd")
 endif
 """"""""""""""""""""""""""""""
 
+
 """"""""""""""""""""""""""""""
 " 自動的に閉じ括弧を入力
 " Karabinatorでvim以外にも下記keymap適用。
@@ -451,6 +454,30 @@ set fileformats=unix,dos,mac
 """"""""""""""""""""""""""""""
 imap <C-d> <ESC><RIGHT>xi
 imap <C-h> <ESC>xa
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" csv用の設定
+""""""""""""""""""""""""""""""
+if exists("did_load_csvfiletype")
+  finish
+endif
+let did_load_csvfiletype=1
+
+augroup filetypedetect
+  au! BufRead,BufNewFile *.csv,*.dat	setfiletype csv
+augroup END
+""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
+" source external vim setting files
+""""""""""""""""""""""""""""""
+
+"if 1
+"  execute 'source' fnamemodify(expand('<sfile>'), ':h').'/.vim/scripts/init.vim'
+"endif
+
 """"""""""""""""""""""""""""""
 
 
