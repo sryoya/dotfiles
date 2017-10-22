@@ -10,12 +10,12 @@ zplug "zplug/zplug"
 
 zplug "~/.modules", \
   from:local, \
-  nice:1, \
+  defer:1, \
   use:"*.sh"
 
 zplug "~/.zsh", \
   from:local, \
-  nice:2, \
+  defer:2, \
   use:"<->_*.zsh"
 
 zplug "b4b4r07/zsh-gomi", \
@@ -73,7 +73,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 
 zplug "zsh-users/zsh-syntax-highlighting", \
-  nice:19
+  defer:3
 
 zplug "b4b4r07/peco-tmux.sh", \
   as:command, \

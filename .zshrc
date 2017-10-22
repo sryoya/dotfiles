@@ -69,20 +69,25 @@ fi
 $DOTPATH/bin/tmuxx
 
 if [[ -f ~/.zplug/init.zsh ]]; then
-  export ZPLUG_LOADFILE="$HOME/.zsh/zplug.zsh"
-  source ~/.zplug/init.zsh
-  source ~/src/github.com/zplug/zplug/init.zsh
+    export ZPLUG_LOADFILE=~/.zsh/zplug.zsh
+    source ~/.zplug/init.zsh
 
-  if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-      echo; zplug install
-    else
-      echo
+    if ! zplug check --verbose; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
+        echo
     fi
-  fi
-  zplug load --verbose
+    zplug load
 fi
+
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
+
+
+
 
 # Display Zsh version and display number
 printf "\n$fg_bold[cyan]This is ZSH $fg_bold[red]${ZSH_VERSION}"
