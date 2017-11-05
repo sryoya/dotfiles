@@ -70,6 +70,12 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'jkramer/vim-checkbox'
 
+" vim上でgit
+NeoBundle 'lambdalisue/gina.vim'
+
+" incremental search
+NeoBundle 'haya14busa/incsearch.vim'
+
 " visualモードの範囲拡大
 NeoBundle 'terryma/vim-expand-region'
 
@@ -468,6 +474,13 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.csv,*.dat	setfiletype csv
 augroup END
 """"""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" incremental search の設定
+""""""""""""""""""""""""""""""
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 
 """"""""""""""""""""""""""""""
