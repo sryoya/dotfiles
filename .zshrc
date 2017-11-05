@@ -100,10 +100,24 @@ export NVM_DIR="/Users/yoheia/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
+export PATH="$PATH:$HOME/.rbenv/bin"
+eval "$(rbenv init - zsh)"
+
 # prompt
 #PROMPT='[%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f]# '
 PROMPT='[%F{yellow}%B%n%b%f]%% '
-RPROMPT='at [%F{green}%d%f]'
+#RPROMPT='at [%F{green}%d%f]'
+rpromptpwd='at [%F{green}%d%f]'
 
-export PATH="$PATH:$HOME/.rbenv/bin"
-eval "$(rbenv init - zsh)"
+# vcs_info
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats '%F{green}[%s] %c%u%b%f'
+zstyle ':vcs_info:*' actionformats '%F{red}[%s]%c%u%b|%a%f'
+
+function _update_vcs_info_msg() {
+    LANG=en_US.UTF-8 vcs_info
+    RPROMPT="${vcs_info_msg_0_} ${rpromptpwd}"
+}
+add-zsh-hook precmd _update_vcs_info_msg
