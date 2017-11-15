@@ -2,11 +2,6 @@ if !exists('g:env')
     finish
 endif
 
-augroup vimrc-without-plugin
-    autocmd!
-    autocmd VimEnter * if !argc() | call <SID>b4b4r07() | endif
-augroup END
-
 "function! s:cd_file_parentdir() "{{{1
 "  execute ":lcd " . expand("%:p:h")
 "endfunction

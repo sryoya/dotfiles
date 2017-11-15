@@ -95,16 +95,16 @@ NeoBundle 'tpope/vim-surround'
 
 " 簡易script実行環境
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make',
-      \     'linux' : 'make',
-      \     'unix' : 'gmake',
-      \    },
-      \ }
-
+""NeoBundle 'Shougo/vimproc.vim', {
+""      \ 'build' : {
+""      \     'windows' : 'tools\\update-dll-mingw',
+""      \     'cygwin' : 'make -f make_cygwin.mak',
+""      \     'mac' : 'make',
+""      \     'linux' : 'make',
+""      \     'unix' : 'gmake',
+""      \    },
+""      \ }
+""
 call neobundle#end()
 
 " Required:
@@ -188,14 +188,14 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
 
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  " return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
+""" Recommended key-mappings.
+""" <CR>: close popup and save indent.
+""inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+""function! s:my_cr_function()
+""  " return neocomplete#close_popup() . "\<CR>"
+""  " For no inserting <CR> key.
+""  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+""endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -311,7 +311,6 @@ let g:table_mode_corner="|"
 """"""""""""""""""""""""""""""
 let g:quickrun_config = get(g:, 'quickrun_config', {})
 let g:quickrun_config._ = {
-      \ 'runner'    : 'vimproc',
       \ 'runner/vimproc/updatetime' : 60,
       \ 'outputter' : 'error',
       \ 'outputter/error/success' : 'buffer',
