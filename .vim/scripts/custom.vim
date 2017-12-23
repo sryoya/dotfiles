@@ -11,6 +11,10 @@ if g:plug.is_installed('caw') "{{{1
     vmap K     <Plug>(caw:i:toggle)
 endif
 
+if g:plug.is_installed('nerdtree') "{{{1
+    nnoremap <silent><C-e> :NERDTreeToggle<CR>
+endif
+
 if g:plug.is_installed('anzu') "{{{1
     nmap n <Plug>(anzu-n)
     nmap N <Plug>(anzu-N)

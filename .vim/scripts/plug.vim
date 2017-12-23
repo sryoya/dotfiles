@@ -44,6 +44,8 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'raphael/vim-present-simple'
     Plug 'mattn/webapi-vim'
     Plug 'b4b4r07/vim-crowi'
+    Plug 'scrooloose/nerdtree'
+'
 
     " syntax? language support
     Plug 'fatih/vim-go', { 'for': 'go' }

@@ -30,8 +30,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'kien/ctrlp.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
-" ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
 " neocompleteとmarkdown-vimを共存させるため
@@ -284,12 +282,6 @@ function! s:GetHighlight(hi)
 endfunction
 """"""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""
-" NERDTreeのキーマップ作成
-""""""""""""""""""""""""""""""
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
-""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " Emmetのキーマップ作成
