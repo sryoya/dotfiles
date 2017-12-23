@@ -46,6 +46,8 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'b4b4r07/vim-crowi'
     Plug 'scrooloose/nerdtree'
     Plug 'Yggdroot/indentLine'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
 
     " syntax? language support
     Plug 'fatih/vim-go', { 'for': 'go' }
