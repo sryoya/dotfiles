@@ -49,6 +49,7 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug 'mattn/emmet-vim'
+    Plug 'majutsushi/tagbar'
 
     " syntax? language support
     Plug 'fatih/vim-go', { 'for': 'go' }
