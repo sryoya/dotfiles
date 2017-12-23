@@ -7,15 +7,15 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 all:
 
-list:
+list: ## Show dot files in this repo
 	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 
-deploy:
+deploy: ## Create symlink to home director
 	@echo '==> Start to deploy dotfiles to home directory.'
 	@echo ''
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
-init:
+init: ## Create symlink to home director
 	@DOTPATH=$(DOTPATH) 
 	
 update: ## Fetch changes for this repo
@@ -32,9 +32,8 @@ clean: ## Remove the dot files and this repo
 	@-$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
 	-rm -rf $(DOTPATH)
 							
+
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 		| sort \
-		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'bash $(DOTPATH)/etc/init/init.sh
-
-
+		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
