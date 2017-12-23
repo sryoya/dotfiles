@@ -48,6 +48,7 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'Yggdroot/indentLine'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
+    Plug 'mattn/emmet-vim'
 
     " syntax? language support
     Plug 'fatih/vim-go', { 'for': 'go' }

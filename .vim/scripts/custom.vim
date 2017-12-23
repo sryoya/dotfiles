@@ -19,6 +19,10 @@ if g:plug.is_installed('indentLine') "{{{1
     let g:indentLine_char = '¦'
 endif
 
+if g:plug.is_installed('emmet') "{{{1
+    let g:user_emmet_leader_key='<C-t>'
+endif
+
 if g:plug.is_installed('anzu') "{{{1
     nmap n <Plug>(anzu-n)
     nmap N <Plug>(anzu-N)
