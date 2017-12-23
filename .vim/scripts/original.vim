@@ -24,8 +24,6 @@ call neobundle#begin(expand($VIMBUNDLE))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" ファイルオープンを便利に
-" NeoBundle 'Shougo/unite.vim'
 " ファイルオープン用
 NeoBundle 'kien/ctrlp.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする

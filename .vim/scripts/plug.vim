@@ -45,7 +45,7 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'mattn/webapi-vim'
     Plug 'b4b4r07/vim-crowi'
     Plug 'scrooloose/nerdtree'
-'
+    Plug 'Yggdroot/indentLine'
 
     " syntax? language support
     Plug 'fatih/vim-go', { 'for': 'go' }
