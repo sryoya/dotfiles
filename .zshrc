@@ -96,7 +96,7 @@ printf "$fg_bold[cyan] - DISPLAY on $fg_bold[red]$DISPLAY$reset_color\n\n"
 # vim:fdm=marker fdc=3 ft=zsh ts=4 sw=4 sts=4:
 
 
-export NVM_DIR="/Users/yoheia/.nvm"
+export NVM_DIR="/Users/ryoyasekino/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
@@ -104,10 +104,17 @@ export PATH="$PATH:$HOME/.rbenv/bin"
 eval "$(rbenv init - zsh)"
 
 # prompt
-#PROMPT='[%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f]# '
+PROMPT='[%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f]# '
 PROMPT='[%F{yellow}%B%n%b%f]%% '
-#RPROMPT='at [%F{green}%d%f]'
+RPROMPT='at [%F{green}%d%f]'
 rpromptpwd='at [%F{green}%d%f]'
+
+
+alias ls="ls -GF"
+alias gls="gls --color"
+
+zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+
 
 # vcs_info
 zstyle ':vcs_info:git:*' check-for-changes true

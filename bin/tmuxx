@@ -20,9 +20,6 @@ if is_screen_or_tmux_running; then
       elif [[ $(( RANDOM % 5 )) == 3 ]]; then
         cowsay -f gnu "slow slow life"
         echo ""
-      elif [[ $(( RANDOM % 5 )) == 4 ]]; then
-        cowsay -f kiss "yohei and moe"
-        echo ""
       elif [[ $(( RANDOM % 5 )) == 0 ]]; then
         cowsay -f milk "No Milk No Life!!!!"
         echo ""
