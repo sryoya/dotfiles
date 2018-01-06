@@ -41,8 +41,8 @@
     default = matching
 
 [user]
-    name  = dorakueyon
-    email = matthew.at.muse@gmail.com
+    name  = sryoya
+    email = sryoya0814@gmail.com
 
 [pager]
     log  = diff-highlight | less -RX
