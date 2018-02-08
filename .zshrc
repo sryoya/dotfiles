@@ -115,8 +115,6 @@ alias gls="gls --color"
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-#sudo時のcorrectをやめさせる
-alias sudo = 'nocorrect sudo'''
 
 # vcs_info
 zstyle ':vcs_info:git:*' check-for-changes true

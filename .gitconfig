@@ -75,3 +75,8 @@
     action   = status
     tool     = enhancd
     lessopen = "| pygmentize -O style=solarized -f console256 -g %s"
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
