@@ -16,7 +16,7 @@ if [[ -f ~/.path ]]; then
 else
   export DOTPATH="${0:A:t}"
 fi
-# export DOTPATH='/Users/yoheia/dotfiles'
+# export DOTPATH='/Users/ryoyaskn/dotfiles'
 
 # DOTPATH environment variable specifies the location of dotfiles.
 # On Unix, the value is a colon-separated string. On Windows,
@@ -112,6 +112,8 @@ rpromptpwd='at [%F{green}%d%f]'
 
 alias ls="ls -GF"
 alias gls="gls --color"
+alias atom="open -a Atom"
+
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
