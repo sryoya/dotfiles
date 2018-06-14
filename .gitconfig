@@ -55,7 +55,7 @@
 	compactionHeuristic = true
 
 [ghq]
-    root = ~/src
+    root = ~/.go/src
 
 [merge]
     tool = vimdiff
