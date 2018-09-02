@@ -1,9 +1,9 @@
-#          _              
-#  _______| |__  _ __ ___ 
+#          _
+#  _______| |__  _ __ ___
 # |_  / __| '_ \| '__/ __|
-#  / /\__ \ | | | | | (__ 
+#  / /\__ \ | | | | | (__
 # /___|___/_| |_|_|  \___|
-#                         
+#
 #
 
 umask 022
@@ -113,6 +113,7 @@ rpromptpwd='at [%F{green}%d%f]'
 alias ls="ls -GF"
 alias gls="gls --color"
 alias atom="open -a Atom"
+alias vs="open -a Visual\ Studio\ Code"
 
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
