@@ -1,1 +1,26 @@
-# DOTFILE
+# 初期設定いろいろ
+
+1. zplug導入
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/
+※zplugはhomebrew経由ではなくこっちで入れる
+
+2. Homebrewでいろいろ入れる
+・brew install tmux
+・brew install zsh-complaints
+・brew install coreutils
+・brew install peco
+・brew install ghq
+
+3. autoload
+autoload -Uz colors
+colors
+
+4. iterm2で色の設定を良い感じに
+contrastとかいじる
+
+## その他
+ログインシェルをzshにしておく
+
+# 参考
+https://chat-rate.com/it/3992/　zshの導入
+https://qiita.com/eumesy/items/3bb39fc783c8d4863c5f
