@@ -1,11 +1,11 @@
 month=`date "+%b"`
 
-alias write="cd ~/Dropbox/Projects/oki_projects/Memo/ && vim Memo_for_${month}.mdown"
-alias memomemo="vi ~/Dropbox/Projects/memo/memo.mdown"
-alias go_memo="vi ~/Dropbox/Projects/memo/go_memo.mdown"
-alias gwp="cd ~/Dropbox/Projects/oki_projects/"
-alias google="vi ~/Dropbox/Projects/google-interview-university/README.md"
-alias machine="vi ~/Dropbox/Projects/machine-learning-for-software-engineers/README.md"
+# alias write="cd ~/Dropbox/Projects/oki_projects/Memo/ && vim Memo_for_${month}.mdown"
+# alias memomemo="vi ~/Dropbox/Projects/memo/memo.mdown"
+# alias go_memo="vi ~/Dropbox/Projects/memo/go_memo.mdown"
+# alias gwp="cd ~/Dropbox/Projects/oki_projects/"
+# alias google="vi ~/Dropbox/Projects/google-interview-university/README.md"
+# alias machine="vi ~/Dropbox/Projects/machine-learning-for-software-engineers/README.md"
 # alias ls="ls -GF"
 # alias gls="gls --color"
 
@@ -16,7 +16,7 @@ alias vi="reattach-to-user-namespace vim"
 # easy way to browse projects listed under ghq
 #alias g='cd $(ghq root)/$(ghq list | peco)'
 # alias g='cd $(find ~/src/github.com -follow  -maxdepth 2 -mindepth 2 -type d|peco)'
-alias g='cd $(find ~/src -follow  -maxdepth 3 -mindepth 3 -type d|peco)'
+alias g='cd $(find ~/.go/src -follow  -maxdepth 3 -mindepth 3 -type d|peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
 cdls ()
@@ -88,9 +88,9 @@ alias vi="vim"
 # Use plain vim.
 alias nvim='vim -N -u NONE -i NONE'
 
-# The first word of each simple command, if unquoted, is checked to see 
-# if it has an alias. [...] If the last character of the alias value is 
-# a space or tab character, then the next command word following the 
+# The first word of each simple command, if unquoted, is checked to see
+# if it has an alias. [...] If the last character of the alias value is
+# a space or tab character, then the next command word following the
 # alias is also checked for alias expansion
 alias sudo='sudo '
 

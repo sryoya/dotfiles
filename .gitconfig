@@ -55,7 +55,7 @@
 	compactionHeuristic = true
 
 [ghq]
-    root = ~/src
+    root = ~/.go/src
 
 [merge]
     tool = vimdiff
@@ -76,7 +76,7 @@
     tool     = enhancd
     lessopen = "| pygmentize -O style=solarized -f console256 -g %s"
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
