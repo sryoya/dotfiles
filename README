@@ -5,11 +5,13 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 ※zplugはhomebrew経由ではなくこっちで入れる
 
 2. Homebrewでいろいろ入れる
-・brew install tmux
-・brew install zsh-complaints
-・brew install coreutils
-・brew install peco
-・brew install ghq
+- brew install tmux
+- brew install zsh-complaints
+- brew install coreutils
+- brew install peco
+- brew install ghq
+- brew install git
+
 
 3. autoload
 autoload -Uz colors
@@ -24,3 +26,4 @@ contrastとかいじる
 # 参考
 https://chat-rate.com/it/3992/　zshの導入
 https://qiita.com/eumesy/items/3bb39fc783c8d4863c5f
+https://qiita.com/ysk_1031/items/a1c112f38fee4c3e8c3e homebrewのgitにする
