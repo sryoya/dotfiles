@@ -20,6 +20,9 @@ colors
 4. iterm2で色の設定を良い感じに
 contrastとかいじる
 
+5. git-diffのsymlink
+ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin
+
 ## その他
 ログインシェルをzshにしておく
 
