@@ -1,7 +1,7 @@
 # 初期設定いろいろ
 
 1. zplug導入
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/
+ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 ※zplugはhomebrew経由ではなくこっちで入れる
 
 2. Homebrewでいろいろ入れる
