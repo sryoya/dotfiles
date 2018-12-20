@@ -11,6 +11,7 @@ brew install coreutils
 brew install peco
 brew install ghq
 brew install git
+brew install reattach-to-user-namespace
 
 
 3. autoload
@@ -24,7 +25,8 @@ contrastとかいじる
 ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin
 
 ## その他
-ログインシェルをzshにしておく
+- ログインシェルをzshにしておく
+- /usr/local/binのパスが通っていることの確認
 
 # 参考
 https://chat-rate.com/it/3992/　zshの導入
