@@ -41,8 +41,8 @@
     default = matching
 
 [user]
-    name  = sryoya
-    email = sryoya0814@gmail.com
+	name = sryoya
+	email = sryoya0814@gmail.com
 
 [pager]
     log  = diff-highlight | less -RX
@@ -80,3 +80,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[ghq "CODECOMMIT-URL"]
+  vcs = git

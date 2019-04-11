@@ -11,11 +11,12 @@ limit coredumpsize 0
 bindkey -d
 
 # autoload<
-#autoload -Uz run-help
-#autoload -Uz add-zsh-hook
-#autoload colors && colors
-#autoload -Uz compinit && compinit -u
-#autoload -Uz is-at-least
+autoload -U vcs_info
+autoload -Uz run-help
+autoload -Uz add-zsh-hook
+autoload colors && colors
+autoload -Uz compinit && compinit -u
+autoload -Uz is-at-least
 
 export TERM=xterm-256color
 
@@ -113,7 +114,7 @@ export PATH="$PATH:$HOME/.rbenv/bin"
 eval "$(rbenv init - zsh)"
 
 # prompt
-PROMPT='[%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f]# '
+# PROMPT='[%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f]# '
 PROMPT='[%F{yellow}%B%n%b%f]%% '
 RPROMPT='at [%F{green}%d%f]'
 rpromptpwd='at [%F{green}%d%f]'

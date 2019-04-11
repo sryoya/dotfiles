@@ -62,6 +62,7 @@ export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 
 # Settings for golang
 export GOPATH="$HOME/.go"
+export GO111MODULE="on"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
 
