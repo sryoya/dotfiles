@@ -82,3 +82,5 @@
 	process = git-lfs filter-process
 [ghq "CODECOMMIT-URL"]
   vcs = git
+[http]
+	cookiefile = /Users/ryoyasekino/.gitcookies

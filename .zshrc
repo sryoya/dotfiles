@@ -49,6 +49,7 @@ if [[ -f $VITAL_PATH ]]; then
   source "$VITAL_PATH"
 fi
 
+setopt nonomatch
 
 # Setting importing from bash_profile.
 # following setting will be deleted after making separated file.
