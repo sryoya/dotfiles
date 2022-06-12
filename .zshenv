@@ -103,3 +103,4 @@ export INTERACTIVE_FILTER="fzf:peco:percol:gof:pick"
 export ONELINER_FILE="$DOTPATH/doc/misc/commands.txt"
 
 [[ -f ~/.secret ]] && source ~/.secret
+. "$HOME/.cargo/env"

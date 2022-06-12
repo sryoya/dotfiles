@@ -114,6 +114,9 @@ export NVM_DIR="/Users/ryoyasekino/.nvm"
 export PATH="$PATH:$HOME/.rbenv/bin"
 eval "$(rbenv init - zsh)"
 
+# add golang to path
+export PATH="$PATH:/usr/local/go/bin"
+
 # prompt
 # PROMPT='[%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f]# '
 PROMPT='[%F{yellow}%B%n%b%f]%% '
