@@ -84,3 +84,5 @@
   vcs = git
 [http]
 	cookiefile = /Users/ryoyasekino/.gitcookies
+[url "git@github.com:"]
+	insteadOf = https://github.com

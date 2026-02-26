@@ -66,6 +66,8 @@ export GO111MODULE="on"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
 
+# compatibility with Hombebrew
+export PATH="/opt/homebrew/bin:$PATH"
 
 # declare the environment variables
 export CORRECT_IGNORE='_*'
@@ -104,3 +106,5 @@ export ONELINER_FILE="$DOTPATH/doc/misc/commands.txt"
 
 [[ -f ~/.secret ]] && source ~/.secret
 . "$HOME/.cargo/env"
+
+export PATH="$HOME/.local/bin:$PATH"

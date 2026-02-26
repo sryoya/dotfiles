@@ -25,32 +25,33 @@ zplug "b4b4r07/zsh-gomi", \
 zplug "mrowa44/emojify", \
   as:command
 
-zplug "stedolan/jq", \
-  as:command, \
-  from:gh-r, \
-  frozen:1
-
-zplug "junegunn/fzf-bin", \
-  as:command, \
-  from:gh-r, \
-  rename-to:"fzf", \
-  frozen:1
-
-zplug "monochromegane/the_platinum_searcher", \
-  as:command, \
-  from:gh-r, \
-  rename-to:"pt", \
-  frozen:1
-
-zplug "peco/peco", \
-  as:command, \
-  from:gh-r, \
-  frozen:1
-
-zplug "motemen/ghq", \
-  as:command, \
-  from:gh-r, \
-  rename-to:ghq
+if ! command -v jq >/dev/null 2>&1; then
+  zplug "stedolan/jq", \
+    as:command, \
+    from:gh-r
+fi
+if ! command -v fzf >/dev/null 2>&1; then
+  zplug "junegunn/fzf-bin", \
+    as:command, \
+    from:gh-r, \
+    rename-to:"fzf"
+fi
+if ! command -v pt >/dev/null 2>&1; then
+  zplug "monochromegane/the_platinum_searcher", \
+    as:command, \
+    from:gh-r, \
+    rename-to:"pt"
+fi
+if ! command -v peco >/dev/null 2>&1; then
+  zplug "peco/peco", \
+    as:command, \
+    from:gh-r
+fi
+if ! command -v ghq >/dev/null 2>&1; then
+  zplug "motemen/ghq", \
+    as:command, \
+    from:gh-r
+fi
 
 zplug "b4b4r07/ls.zsh", \
   as:command, \
@@ -80,7 +81,7 @@ zplug "b4b4r07/peco-tmux.sh", \
   use:'*.sh', \
   rename-to:'peco-tmux'
 
-zplug "philovivero/distribution", \
+zplug "time-less-ness/distribution", \
   as:command, \
   use:distribution, \
   if:'(( $+commands[perl] ))'
@@ -89,11 +90,12 @@ zplug "mitmproxy/mitmproxy", \
   as:command, \
   hook-build:"sudo python ./setup.py install"
 
-zplug "fujiwara/nssh", \
-  as:command, \
-  from:gh-r, \
-  rename-to:"nssh", \
-  frozen:1
+if ! command -v nssh >/dev/null 2>&1; then
+  zplug "fujiwara/nssh", \
+    as:command, \
+    from:gh-r, \
+    rename-to:"nssh"
+fi
 
 zplug "wg/wrk", \
   as:command, \
@@ -115,4 +117,6 @@ zplug "takuya/f5a6fb560dc357835122", \
   use:'node2bash.js', \
   rename-to:'node2bash'
 
-zplug 'Code-Hex/battery', as:command, from:gh-r
+if ! command -v battery >/dev/null 2>&1; then
+  zplug 'Code-Hex/battery', as:command, from:gh-r
+fi
