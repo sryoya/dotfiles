@@ -10,13 +10,7 @@ umask 022
 limit coredumpsize 0
 bindkey -d
 
-# autoload<
 autoload -U vcs_info
-autoload -Uz run-help
-autoload -Uz add-zsh-hook
-autoload colors && colors
-autoload -Uz compinit && compinit -u
-autoload -Uz is-at-least
 
 export TERM=xterm-256color
 
