@@ -86,10 +86,6 @@ zplug "time-less-ness/distribution", \
   use:distribution, \
   if:'(( $+commands[perl] ))'
 
-zplug "mitmproxy/mitmproxy", \
-  as:command, \
-  hook-build:"sudo python ./setup.py install"
-
 if ! command -v nssh >/dev/null 2>&1; then
   zplug "fujiwara/nssh", \
     as:command, \
@@ -106,10 +102,6 @@ zplug "reorx/httpstat", \
   use:'httpstat.py', \
   if:'(( $+commands[python] ))', \
     rename-to:'httpstat'
-
-zplug "jhawthorn/fzy", \
-  as:command, \
-  hook-build:"make && sudo make install"
 
 zplug "takuya/f5a6fb560dc357835122", \
   as:command, \

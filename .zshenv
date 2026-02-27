@@ -73,15 +73,11 @@ export PATH="/opt/homebrew/bin:$PATH"
 export CORRECT_IGNORE='_*'
 export CORRECT_IGNORE_FILE='.*'
 
-export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export WORDCHARS='*?.[]~&;!#$%^(){}<>'
 
 # fzf - command-line fuzzy finder (https://github.com/junegunn/fzf)
 export FZF_DEFAULT_OPTS="--extended --ansi --multi"
 
-
-# Cask
-#export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # History
 # History file

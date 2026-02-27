@@ -1,17 +1,4 @@
-month=`date "+%b"`
-
-# alias write="cd ~/Dropbox/Projects/oki_projects/Memo/ && vim Memo_for_${month}.mdown"
-# alias memomemo="vi ~/Dropbox/Projects/memo/memo.mdown"
-# alias go_memo="vi ~/Dropbox/Projects/memo/go_memo.mdown"
-# alias gwp="cd ~/Dropbox/Projects/oki_projects/"
-# alias google="vi ~/Dropbox/Projects/google-interview-university/README.md"
-# alias machine="vi ~/Dropbox/Projects/machine-learning-for-software-engineers/README.md"
-# alias ls="ls -GF"
-# alias gls="gls --color"
-
 alias cd="cdls"
-alias vim="reattach-to-user-namespace vim"
-alias vi="reattach-to-user-namespace vim"
 
 # easy way to browse projects listed under ghq
 #alias g='cd $(ghq root)/$(ghq list | peco)'

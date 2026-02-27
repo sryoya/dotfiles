@@ -20,8 +20,6 @@ if [[ -f ~/.path ]]; then
 else
   export DOTPATH="${0:A:t}"
 fi
-# export DOTPATH='/Users/ryoyaskn/dotfiles'
-
 # DOTPATH environment variable specifies the location of dotfiles.
 # On Unix, the value is a colon-separated string. On Windows,
 # it is not yet supported.
@@ -44,13 +42,6 @@ if [[ -f $VITAL_PATH ]]; then
 fi
 
 setopt nonomatch
-
-# Setting importing from bash_profile.
-# following setting will be deleted after making separated file.
-export LSCOLORS=exfxcxdxbxegedabagacad
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-
-zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
@@ -91,19 +82,12 @@ if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
 
-
-
-
 # Display Zsh version and display number
 printf "\n$fg_bold[cyan]This is ZSH $fg_bold[red]${ZSH_VERSION}"
 printf "$fg_bold[cyan] - DISPLAY on $fg_bold[red]$DISPLAY$reset_color\n\n"
 
-# vim:fdm=marker fdc=3 ft=zsh ts=4 sw=4 sts=4:
-
-
 export NVM_DIR="/Users/ryoyasekino/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 export PATH="$PATH:$HOME/.rbenv/bin"
 eval "$(rbenv init - zsh)"
@@ -112,20 +96,12 @@ eval "$(rbenv init - zsh)"
 export PATH="$PATH:/usr/local/go/bin"
 
 # prompt
-# PROMPT='[%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f]# '
 PROMPT='[%F{yellow}%B%n%b%f]%% '
 RPROMPT='at [%F{green}%d%f]'
 rpromptpwd='at [%F{green}%d%f]'
 
 
-alias ls="ls -GF"
-alias gls="gls --color"
-alias atom="open -a Atom"
 alias vs="open -a Visual\ Studio\ Code"
-
-
-zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-
 
 # vcs_info
 zstyle ':vcs_info:git:*' check-for-changes true
